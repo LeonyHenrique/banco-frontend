@@ -1,2 +1,2 @@
 # banco-frontend
-Frontend para aplicação de banco desenvolvida com React. Inclui interfaces para visualização de saldo, depósito e saque de contas bancárias
+Frontend - aplicação de banco desenvolvida com React. Inclui interface para visualização de saldo, depósito e saque 
