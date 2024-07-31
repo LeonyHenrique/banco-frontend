@@ -1,0 +1,44 @@
+.header {
+   max-width: 100%;
+    height: 80%;
+    padding: 2%;
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  
+  .nav {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navItem {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 1.2rem;
+  }
+  
+  .navItem:hover {
+    color: #cccccc;
+  }
+  
+  .profile {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profileImage {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  

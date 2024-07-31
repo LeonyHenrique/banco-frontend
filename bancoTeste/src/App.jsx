@@ -1,12 +1,13 @@
 import React from 'react';
-import Home from '../Pages/banco/Home';
+import Home from './Pages/banco/Home';
+import AppRoutes from '../../routes/routes';
 import"./App.css";
 
 const App = () => {
   return (
-    <div className="App">
-      <Home />
-    </div>
+    <div>
+    <AppRoutes />
+  </div>
   );
 };
 
