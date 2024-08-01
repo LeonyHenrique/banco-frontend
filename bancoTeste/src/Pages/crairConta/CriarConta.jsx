@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import styles from "./CriarConta.module.css"
 import Header from "../../components/header/Header";
 import {useNavigate} from 'react-router-dom';
+import { criarConta } from "../../../service/Aperacoes/operacoes";
 
 const CriarConta =()=>{
     const [formData,setFormData] = useState({
@@ -16,19 +17,24 @@ const CriarConta =()=>{
     const handleChange =(e) =>{
         setFormData({...formData, [e.target.name]: e.target.value});
     };
-    const handleSubmit = (e) => {       
+
+    const handleSubmit = async (e) => {       
         e.preventDefault();
         if (formData.senha !== formData.confirmarSenha) {
             alert('As senhas não coincidem');
             return;
+        } try {
+            await criarConta(formData);
+            alert('Conta criada com sucesso!');
+            navigate('/Home');
+        } catch (error) {
+            console.error('Erro ao criar conta:', error);
+            alert('Erro ao criar conta. Tente novamente.');
         }
-        console.log(formData);
+       
 };
 const navigate = useNavigate();
 
-const handleNavigate = () => {
-  navigate('/Home');
-};
 return (
     <div className={styles.container01}>
     <Header />
@@ -107,7 +113,7 @@ return (
                             Poupança
                         </label>
                     </div>
-                    <button className={styles.button} onClick={handleNavigate}>Ir para Home</button>
+                    <button className={styles.button} type="submit">Criar Conta</button>
                 </form>
         </div>
             </div>
